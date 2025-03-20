@@ -21,10 +21,11 @@ public class GitHubWikiTest {
         open("https://github.com/selenide/selenide");
 
         // Перейти в раздел Wiki проекта
-        $(byText("Wiki")).click();
+        $(("#wiki-tab")).click();
         //Убедитесь, что в списке страниц (Pages) есть страница SoftAssertions
         $("#wiki-content").shouldHave(text("Soft assertions"));
         $("#wiki-content").$(byText("Soft assertions")).click();
         $(byTagAndText("h4","3. Using JUnit5 extend test class:")).shouldBe(visible);
+
     }
 }
